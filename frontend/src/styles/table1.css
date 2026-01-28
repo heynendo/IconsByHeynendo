@@ -1,0 +1,60 @@
+.table-1{
+    padding: 10px;
+    margin: 15px;
+    border-radius: 25px;
+    background-color: var(--background1);
+    min-height: 60px;
+}
+.table-1 > .break{
+    height: 1px;
+    width: 100%;
+    background-color: var(--colorprimary);
+    justify-self: center;
+}
+.table-row{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 30px;
+    gap: 25px;
+    padding: 0 10px;
+    margin: 2px 0;
+}
+.table-row > label{
+    width: 45px;
+    font-weight: 600;
+    font-size: 0.75em;
+    opacity: 0.75;
+}
+.table-row > .table-input > input{
+    font-family: 'Inter';
+    display: flex;
+    background: none;
+    border: none;
+    height: 30px;
+    font-weight: 600;
+    font-size: 1em;
+    color: var(--colorprimary);
+    width: 100px;
+    min-width: 100px;
+}
+.table-row > .table-input > input:focus{
+    outline: none;
+}
+.table-row > .table-custom{
+    display: flex;
+    background-color: var(--background2);
+    aspect-ratio: 1;
+    height: 25px;
+    padding: 2.5px;
+    border-radius: 25px;
+    box-shadow: 0px 2.5px 2.5px rgba(0, 0, 0, 0.25);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.1s;
+    border: solid 2px transparent;
+}
+.table-row > .table-custom:hover{
+    border: solid 2px var(--colorprimary);
+}
