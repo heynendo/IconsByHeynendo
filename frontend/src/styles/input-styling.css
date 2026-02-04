@@ -1,0 +1,105 @@
+.input-with-colorpicker > .container,
+.input-with-dropdown > .container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 30px;
+    padding: 5px;
+}
+.container > .text-input{
+    width: 120px;
+    height: 25px;
+    background: none;
+    border: none;
+    outline: none;
+    height: 30px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1em;
+    color: var(--colorprimary);
+    text-indent: 5px;
+}
+.container > .text-input:focus{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.container > .color-picker{
+    background-color: var(--background2);
+    border: none;
+    aspect-ratio: 1;
+    width: 25px;
+    border-radius: 5px;
+    transition: 0.2s;
+    cursor: pointer;
+    border: solid 2px transparent;
+    box-shadow: 0px 2.5px 2.5px rgba(0, 0, 0, 0.25);
+}
+.container > .color-picker:hover{
+    border: solid 2px var(--colorprimary);
+}
+.container > .toggle-dropdown{
+    display: flex;
+    background-color: var(--background2);
+    border: none;
+    aspect-ratio: 1;
+    width: 25px;
+    border-radius: 25px;
+    transition: 0.2s;
+    cursor: pointer;
+    border: solid 2px transparent;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2.5px 2.5px rgba(0, 0, 0, 0.25);
+}
+.container > .toggle-dropdown:hover{
+    border: solid 2px var(--colorprimary);
+}
+.input-with-dropdown > .dropdown {
+    background-color: var(--colorprimary);
+    color: var(--background1);
+    position: absolute;
+    margin-top: 1px;
+    border-radius: 0 0 25px 25px;
+    padding: 1px 5px 5px 5px;
+    min-width: 100px;
+    width: fit-content;
+    max-width: 120px;
+    padding-bottom: 7.5px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+.input-with-dropdown > .dropdown::-webkit-scrollbar-track{
+    background: none;
+    box-shadow: none;
+    margin-bottom: 20px;
+}
+.input-with-dropdown > .dropdown::-webkit-scrollbar {
+    width: 8px;
+}
+.input-with-dropdown > .dropdown::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+}
+.dropdown > .option{
+    display: flex;
+    height: 30px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1em;
+    align-items: center;
+    padding: 0 5px;
+    padding-left: 7.5px;
+    cursor: pointer;
+    align-self: center;
+}
+.dropdown > .with-border {
+  border-bottom: 1px solid #ccc;
+}
+.dropdown > .option:hover{
+    background-color: var(--background2);
+    color: var(--colorprimary);
+}
+.dropdown > .bottom:hover{
+    border-radius: 0 0 20px 20px;
+}
+/*add dropdown scrollbar */

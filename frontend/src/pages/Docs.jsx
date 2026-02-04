@@ -71,7 +71,12 @@ export default function Docs(){
                     : 
                         <>
                             <h2>Usage</h2>
+                            <div className='break' />
+                            <h3>Option 1 - Library Installed</h3>
                             <p>Here we have about 2 paragraphs that tell all out this project, why it was created, and the goals it helps to achieve. The second paragraph should list off some different ways to use this project. Should also include that each of the UI elements and icons were created by Donovan Heynen and are open source for any users who wish to use them. A link to a Figma project should be included that has each of the icons and UI elements used, I think that would be the best open source platform to share them on.</p>
+                            <h3>Option 2 - JSX Components</h3>
+                            <p>Here we have about 2 paragraphs that tell all out this project, why it was created, and the goals it helps to achieve. The second paragraph should list off some different ways to use this project. Should also include that each of the UI elements and icons were created by Donovan Heynen and are open source for any users who wish to use them. A link to a Figma project should be included that has each of the icons and UI elements used, I think that would be the best open source platform to share them on.</p>
+                            <h3>Option 3 - Raw SVG Files</h3>
                             <p>Here we have about 2 paragraphs that tell all out this project, why it was created, and the goals it helps to achieve. The second paragraph should list off some different ways to use this project. Should also include that each of the UI elements and icons were created by Donovan Heynen and are open source for any users who wish to use them. A link to a Figma project should be included that has each of the icons and UI elements used, I think that would be the best open source platform to share them on. </p>
                         </>
                     }

@@ -1,111 +1,72 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import '../styles/icons.css'
 import SearchBar from "../components/SearchBar"
-import Badge from '../components/Badge';
-import Table1 from '../components/Table1';
-
+import PageDivider from '../components/PageDivider'
+import * as IconsHeynendo from 'icons-by-heynendo'
+//import { searchIcons } from 'icons-by-heynendo'
+import IconInfo from '../components/IconInfo'
 
 export default function Icons(){
-    const [leftWidth, setLeftWidth] = useState(65); 
-    const [isDragging, setIsDragging] = useState(false);
-    const [searchValue, setSearchValue] = useState([])
-    const containerRef = useRef(null);
+    const [searchValue, setSearchValue] = useState('')
+    const [selectedIcon, setSelectedIcon] = useState(null)
+    const [width, setWidth] = useState(window.innerWidth);
 
     useEffect(() => {
-        const handleMouseMove = (e) => {
-            if (!isDragging || !containerRef.current) return;
+        const handleResize = () => setWidth(window.innerWidth)
 
-            const container = containerRef.current;
-            const containerRect = container.getBoundingClientRect();
-            const containerWidth = containerRect.width;
-            const newLeftWidthPx = e.clientX - containerRect.left;
+        window.addEventListener("resize", handleResize)
+        return () => window.removeEventListener("resize", handleResize)
+    }, [])
 
-            const minLeftPercent = (800 / containerWidth) * 100;
-            const maxLeftPercent = 100 - (400 / containerWidth) * 100;
-            
-            const newLeftWidthPercent = (newLeftWidthPx / containerWidth) * 100;
+    const iconArray = Object.entries(IconsHeynendo).map(([name, Component]) => ({
+        name,
+        Component
+    }))
 
-            setLeftWidth(Math.min(Math.max(newLeftWidthPercent, minLeftPercent), maxLeftPercent));
-        };
+    const filteredIcons = iconArray.filter(({ name }) =>
+        name.toLowerCase().includes(searchValue.toLowerCase())
+    )
+    /*const filteredIcons = searchValue 
+        ? searchIcons(searchValue).map(({ name, component }) => ({
+            name,
+            Component: component
+          }))
+        : iconArray.filter(({ name }) => name !== 'searchIcons')*/
 
-        const handleMouseUp = () => {
-            setIsDragging(false);
-        };
-
-        if (isDragging) {
-            document.addEventListener('mousemove', handleMouseMove);
-            document.addEventListener('mouseup', handleMouseUp);
-        }
-
-        return () => {
-            document.removeEventListener('mousemove', handleMouseMove);
-            document.removeEventListener('mouseup', handleMouseUp);
-        };
-    }, [isDragging]);
-
-    const styleLeft = {
-        width: `${leftWidth}%`,
-        minWidth: '800px'    
-    }
-    const styleRight = {
-        width: `${100 - leftWidth}%`,
-        minWidth: '400px'
-    }
+    const iconCards = filteredIcons.map(({ name, Component }) => (
+        <div className={`card ${selectedIcon?.name === name ? 'selected' : ''}`} key={name} onClick={() => setSelectedIcon({name, Component})}>
+            <Component size={width < 700 ? 50 : 75} color='#343C54'/>
+            <p>{name}</p>
+        </div>
+    ))
 
     return(
-        <div 
-            className="icons page-layout" 
-            ref={containerRef}
-            style={{ 
-                userSelect: isDragging ? 'none' : 'auto',
-                cursor: isDragging ? 'col-resize' : 'auto',
-                display: 'flex'
-            }}
+        <PageDivider 
+            className="icons page-layout"
+            initWidthLeft={65}
+            minWidthLeft={650}
+            minWidthRight={400}
+            showLeft={true}
+            showRight={selectedIcon}
         >
-            <div 
-                className="left"
-                style={styleLeft}
-            >
+            <PageDivider.Left>
                 <SearchBar 
                     searchValue={searchValue} 
                     setSearchValue={setSearchValue}
                 />
                 <div className='items-list'>
-                    {Array.from({ length: 50 }, (_, index) => (
-                        <div key={index} className="card">
-                        Card {index + 1}
-                        </div>
-                    ))}
+                    {iconCards}
                 </div>
-            </div>
-            <div 
-                className="right"
-                style={styleRight}
-            >
-                <div 
-                    className='drag'
-                    onMouseDown={() => setIsDragging(true)}
-                    style={{ cursor: 'col-resize' }}
+            </PageDivider.Left>
+
+            <PageDivider.Right>
+                {selectedIcon &&
+                <IconInfo 
+                    selectedIcon={selectedIcon}
+                    setSelectedIcon={setSelectedIcon}
                 />
-                <div className='selected-item'>
-                    <Badge>
-                        SVG
-                    </Badge>
-                    <Table1>
-                        <Table1.Row label="Color">
-                            
-                        </Table1.Row>
-                        
-                        <Table1.Row label="Height">
-                            
-                        </Table1.Row>
-                        
-                        <Table1.Row label="Width">
-                            
-                        </Table1.Row>
-                    </Table1>
-                </div>
-            </div>
-        </div>
+                }
+            </PageDivider.Right>
+        </PageDivider>
     )
 }

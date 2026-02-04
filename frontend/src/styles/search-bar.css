@@ -36,7 +36,6 @@
     font-size: 1em;
     color: var(--colorprimary);
     width: 100%;
-    cursor: default;
 }
 .search-bar > input:focus{
     outline: none;

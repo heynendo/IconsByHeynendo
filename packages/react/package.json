@@ -1,0 +1,30 @@
+{
+  "name": "icons-by-heynendo",
+  "version": "1.0.0",
+  "description": "SVG icon library for React",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "node scripts/copy-icons.js",
+    "build": "node scripts/build-package.js"
+  },
+  "keywords": [
+    "react",
+    "icons",
+    "svg"
+  ],
+  "author": "Heynendo",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "devDependencies": {
+    "fs-extra": "^11.2.0"
+  },
+  "dependencies": {
+    "icons-by-heynendo": "file:../.."
+  }
+}

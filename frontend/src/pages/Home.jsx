@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
 import '../styles/home.css'
 import {motion} from "framer-motion"
+import FloatingIcons from '../components/FloatingIcons'
 
 function Home(){
     return(
         <div className="home page-layout">
             <div className="left">
-                <span className='banner'>svg & icons made easier</span>
+                <span className='banner'>svg icons made easier</span>
                 <span className='title'>
                     <h1 className='accent'>100+ Icons </h1>
                     <h1>With Endless Customization Waiting For You.</h1>
@@ -27,14 +28,14 @@ function Home(){
                 exit={{x: '75vw', transition: { duration: 0.5, ease: 'easeOut' }}}
             >
                 <div className='container'>
-                    {/**add design comp here */}
+                    <FloatingIcons />
                 </div>
                 <div className='bottom'>
                     <p>more from this developer</p>
                     <div className='break'/>
                     <span>
                         <h3>
-                            Upgrade your UI with&nbsp;
+                            coming soon - Upgrade your UI with&nbsp;
                             <a 
                                 href="https://donovanheynen.com" 
                                 target="_blank" 

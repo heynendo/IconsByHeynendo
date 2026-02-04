@@ -14,6 +14,7 @@
     background: var(--background2);
     box-shadow: inset 0px 0px 5px var(--colorprimary);
     border-radius: 25px;
+    margin: auto;
     margin-bottom: 50px;
 }
 .docs > .selector > .p-light{
@@ -28,17 +29,19 @@
     font-weight: 500;
     color: var(--coloraccent);
 }
-@media (max-width: 700px){
-    .docs > .selector{
-        width: 90vw;
-        min-width: fit-content;
-        justify-content: space-around;
-        margin-bottom: 75px;
-    }
-    .docs > .selector > .p-light{
-        min-width: none;
-        margin: 0 5px;
-    }
+.docs > .body .content h2{
+    margin-left: 5px;
+}
+.docs > .body .content h3{
+    margin-top: 15px;
+    margin-left: 10px;
+}
+.docs > .body .content .break{
+    height: 1px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 35px;
+    background-color: var(--colorprimary);
 }
 .docs > .body{
     display: block;
@@ -47,7 +50,7 @@
     width: 100vw;
     height: calc(100vh - 290px);
     padding: 0 2.5vw;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .docs > .body > span{
     display: flex;
@@ -72,4 +75,22 @@
     font-weight: 300;
     font-size: 1em;
     margin: 25px;
+}
+@media (max-width: 700px){
+    .docs > h1{
+        height: 100px;
+    }
+    .docs > .selector{
+        width: 90vw;
+        min-width: fit-content;
+        justify-content: space-around;
+        margin-bottom: 35px;
+    }
+    .docs > .selector > .p-light{
+        min-width: none;
+        margin: 0 5px;
+    }
+    .docs > .body{
+        height: calc(100vh - 225px);
+    }
 }

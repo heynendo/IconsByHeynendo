@@ -1,0 +1,22 @@
+{
+  "name": "icons-by-heynendo",
+  "version": "1.0.0",
+  "description": "A comprehensive SVG icon library with React components",
+  "scripts": {
+    "build:svg": "node scripts/build-svg.js",
+    "build:jsx": "node scripts/build-jsx.js",
+    "build:react": "node scripts/build-react.js",
+    "build:all": "node scripts/build-svg.js && node scripts/build-jsx.js && node scripts/build-react.js",
+    "metadata": "node scripts/generate-metadata.js",
+    "package:setup": "npm install --prefix packages/react",
+    "package:build": "npm run build --prefix packages/react",
+    "package:link": "npm link --prefix packages/react"
+  },
+  "keywords": ["icons", "svg", "react", "jsx"],
+  "author": "Heynendo",
+  "license": "MIT",
+  "devDependencies": {
+    "svgo": "^3.2.0",
+    "fs-extra": "^11.2.0"
+  }
+}

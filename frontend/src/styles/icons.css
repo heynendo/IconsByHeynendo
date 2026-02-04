@@ -1,39 +1,63 @@
 .icons{
     display: flex;
 }
-.icons > .left{
+.icons > .page-divider-left{
     padding-top: 75px;
     padding-left: 2.5vw;
 }
-.icons > .left > .search-bar{
+.icons > .page-divider-left > .search-bar{
     margin-left: 20px;
 }
-.icons > .left > .items-list{
+.icons > .page-divider-left > .items-list{
     margin: 50px 10px;
     padding: 25px 10px;
     display: flex;
     justify-content: start;
     flex-wrap: wrap;
-    overflow-y: scroll;
+    overflow-y: auto;
     gap: 25px;
     max-height: calc(100vh - 250px);
 }
-.icons > .left > .items-list > .card{
+.icons > .page-divider-left > .items-list > .card{
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
     aspect-ratio: 1;
     height: 150px;
     border-radius: 25px;
     background-color: var(--background2);
     text-align: center;
     align-content: end;
-    padding-bottom: 10px;
     box-shadow: 0px 2.5px 5px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    border: solid 2px transparent;
+    transition: 0.2s;
 }
-.icons > .right{
+.icons > .page-divider-left > .items-list > .card:hover{
+    border: solid 2px rgba(62, 72, 102, 0.75);
+    box-shadow: 0px 2.5px 10px rgba(0, 0, 0, 0.5);
+}
+.icons > .page-divider-left > .items-list > .card.selected{
+    border: solid 2px rgb(62, 72, 102);
+    box-shadow: 0px 2.5px 10px rgba(0, 0, 0, 0.5);
+}
+.icons > .page-divider-left > .items-list > .card > svg{
+    margin: 12.5px;
+}
+.icons > .page-divider-left > .items-list > .card > p{
+    display: block;
+    color: rgba(62, 72, 102, 0.75);
+    font-size: 0.75em;
+    height: 40px;
+    align-content: center;
+}
+.icons > .page-divider-right{
     display: flex;
     background-color: var(--background3);
     justify-content: start;
 }
-.icons > .right > .drag{
+.icons > .page-divider-right > .page-divider-drag{
     width: 5px;
     margin: 5px;
     height: 50px;
@@ -41,7 +65,24 @@
     background-color: var(--background1);
     align-self: center;
 }
-.icons > .right > .container{
+.icons > .page-divider-right > .right{
     display: flex;
     flex-wrap: wrap;
+}
+@media (max-width: 700px){
+    .icons > .page-divider-left > .items-list{
+        margin: 50px 10px;
+        padding: 15px 10px;
+        gap: 20px;
+    }
+    .icons > .page-divider-left > .items-list > .card{
+        height: 100px;
+    }
+    .icons > .page-divider-left > .items-list > .card > svg{
+        margin: 7.5px;
+    }
+    .icons > .page-divider-left > .items-list > .card > p{
+        font-size: 0.65em;
+        height: 25px;
+    }
 }

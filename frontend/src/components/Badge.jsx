@@ -13,7 +13,7 @@ export default function Badge({
         border: `solid 2px ${color1}`,
         backgroundColor: selected ? color1 : color2,
         color: color3,
-        boxShadow: selected ? '0px 2.5px 10px rgba(0, 0, 0, 0.5)' : '0px 2.5px 5px rgba(0, 0, 0, 0.25)'
+        boxShadow: selected ? '0px 2.5px 5px rgba(0, 0, 0, 0.5)' : '0px 2.5px 2.5px rgba(0, 0, 0, 0.25)'
     }
 
     return(
