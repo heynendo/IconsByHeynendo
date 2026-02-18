@@ -1,0 +1,59 @@
+[
+  {
+    "name": "arrow-left",
+    "pascalName": "ArrowLeft",
+    "keywords": [
+      "arrow-left",
+      "arrow",
+      "left",
+      "navigation",
+      "direction",
+      "backward"
+    ],
+    "svg": "<!-- search: navigation, direction, backward -->\n<svg viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\n  <path d=\"M14 7l-5 5 5 5\" />\n</svg>\n",
+    "jsx": "export default function ArrowLeft({\n  size = 24,\n  color = \"currentColor\",\n  rotation = 0,\n  ...props\n}) {\n  return (\n    \n<svg width={size} height={size} fill={color} style={{ transform: `rotate(${rotation}deg)` }} {...props} viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\n  <path d=\"M14 7l-5 5 5 5\" />\n</svg>\n\n  );\n}",
+    "react": "import { ArrowLeft } from \"icons-by-heynendo\";\n\nexport default function ArrowLeftExample() {\n  return (\n    <ArrowLeft\n      size={20}\n      color=\"#000000\"\n    />\n  );\n}"
+  },
+  {
+    "name": "hamburger-menu-1",
+    "pascalName": "HamburgerMenu1",
+    "keywords": [
+      "hamburger-menu-1",
+      "hamburger",
+      "menu",
+      "1",
+      "dropdown",
+      "nav",
+      "navigation"
+    ],
+    "svg": "<!-- search: dropdown, nav, navigation -->\n<svg width=\"75\" height=\"50\" viewBox=\"0 0 75 50\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect width=\"75\" height=\"10\" fill=\"#343C54\"/>\n<rect y=\"20\" width=\"75\" height=\"10\" fill=\"#343C54\"/>\n<rect y=\"40\" width=\"75\" height=\"10\" fill=\"#343C54\"/>\n</svg>",
+    "jsx": "export default function HamburgerMenu1({\n  size = 24,\n  color = \"currentColor\",\n  rotation = 0,\n  ...props\n}) {\n  return (\n    \n<svg width={size} height={size} fill={color} style={{ transform: `rotate(${rotation}deg)` }} {...props} width=\"75\" height=\"50\" viewBox=\"0 0 75 50\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect width=\"75\" height=\"10\" fill=\"#343C54\"/>\n<rect y=\"20\" width=\"75\" height=\"10\" fill=\"#343C54\"/>\n<rect y=\"40\" width=\"75\" height=\"10\" fill=\"#343C54\"/>\n</svg>\n  );\n}",
+    "react": "import { HamburgerMenu1 } from \"icons-by-heynendo\";\n\nexport default function HamburgerMenu1Example() {\n  return (\n    <HamburgerMenu1\n      size={20}\n      color=\"#000000\"\n    />\n  );\n}"
+  },
+  {
+    "name": "home",
+    "pascalName": "Home",
+    "keywords": [
+      "home",
+      "house",
+      "main",
+      "dashboard"
+    ],
+    "svg": "<!-- search: house, main, dashboard -->\n<svg viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\n  <path d=\"M3 10l9-7 9 7v10H3z\" />\n</svg>\n",
+    "jsx": "export default function Home({\n  size = 24,\n  color = \"currentColor\",\n  rotation = 0,\n  ...props\n}) {\n  return (\n    \n<svg width={size} height={size} fill={color} style={{ transform: `rotate(${rotation}deg)` }} {...props} viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\n  <path d=\"M3 10l9-7 9 7v10H3z\" />\n</svg>\n\n  );\n}",
+    "react": "import { Home } from \"icons-by-heynendo\";\n\nexport default function HomeExample() {\n  return (\n    <Home\n      size={20}\n      color=\"#000000\"\n    />\n  );\n}"
+  },
+  {
+    "name": "notification",
+    "pascalName": "Notification",
+    "keywords": [
+      "notification",
+      "alert",
+      "bell",
+      "notify"
+    ],
+    "svg": "<!-- search: alert, bell, notify -->\n<svg viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\n  <path d=\"M12 22a2 2 0 002-2h-4a2 2 0 002 2zM18 16V11a6 6 0 10-12 0v5l-2 2h16l-2-2z\" />\n</svg>\n",
+    "jsx": "export default function Notification({\n  size = 24,\n  color = \"currentColor\",\n  rotation = 0,\n  ...props\n}) {\n  return (\n    \n<svg width={size} height={size} fill={color} style={{ transform: `rotate(${rotation}deg)` }} {...props} viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\n  <path d=\"M12 22a2 2 0 002-2h-4a2 2 0 002 2zM18 16V11a6 6 0 10-12 0v5l-2 2h16l-2-2z\" />\n</svg>\n\n  );\n}",
+    "react": "import { Notification } from \"icons-by-heynendo\";\n\nexport default function NotificationExample() {\n  return (\n    <Notification\n      size={20}\n      color=\"#000000\"\n    />\n  );\n}"
+  }
+]

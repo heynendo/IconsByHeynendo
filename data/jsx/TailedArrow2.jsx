@@ -1,0 +1,14 @@
+export default function TailedArrow2({
+  size = 24,
+  color = "currentColor",
+  rotation = 0,
+  ...props
+}) {
+  return (
+    
+<svg width={size} height={size} fill={color} style={{ transform: `rotate(${rotation}deg)` }} {...props} viewBox="0 0 956 555" xmlns="http://www.w3.org/2000/svg">
+<path d="M493.243 50.08C493.243 10.7822 536.492 -13.1554 569.792 7.71082L932.385 234.917C963.652 254.51 963.652 300.062 932.385 319.655L569.792 546.862C536.492 567.728 493.243 543.791 493.243 504.493V350.62H50C22.3859 350.62 0.000153525 328.234 0 300.62V267.286C0.000205501 239.672 22.3859 217.286 50 217.286H493.243V50.08Z"/>
+</svg>
+
+  );
+}

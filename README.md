@@ -1,147 +1,88 @@
-# IconsByHeynendo
+# Icons by Heynendo
 
-Professional SVG icon library with React components.
+A React-first icon library with beautiful, customizable icons. Get clean SVG exports, ready-to-use JSX components, or full React components with built-in props.
 
-## 📁 Project Structure
+## Features
 
-```
-IconsByHeynendo/
-├── icons/              # Your SVG source files
-├── metadata/           # Icon metadata (search tags, categories)
-├── dist/              # Generated files (committed to git)
-│   ├── svg/          # Optimized SVGs
-│   ├── jsx/          # JSX exports
-│   └── react/        # React components
-├── packages/react/    # NPM package
-├── scripts/          # Build scripts
-└── frontend/         # Your React frontend
-```
+- **Multiple formats**: SVG, JSX, and React components
+- **Fully customizable**: Size, color, rotation, and any SVG props
+- **Tree-shakeable**: Import only the icons you need
+- **Searchable**: Metadata and keywords for easy discovery
+- **Lightweight**: Optimized SVG with no dependencies
 
-## 🚀 Quick Start
-
-### 1. Initial Setup
+## Installation
 
 ```bash
-# Install dependencies
-npm install
-
-# Add SVG files to icons/ folder
-# (menu.svg and arrow-down.svg are included as examples)
-
-# Build everything
-npm run build:all
+npm install icons-by-heynendo
 ```
 
-### 2. Build the NPM Package
+## Usage
 
-```bash
-# Install package dependencies
-npm run package:setup
+### React Components (Recommended)
 
-# Build the package
-npm run package:build
-```
+Import and use icons as React components with full customization:
 
-### 3. Use Locally in Your Frontend
-
-```bash
-# Link the package
-npm run package:link
-
-# In your frontend folder:
-cd frontend
-npm link icons-by-heynendo
-```
-
-Now import in your React code:
 ```jsx
-import { Menu, ArrowDown } from 'icons-by-heynendo';
+import { Home, Notification, ArrowLeft } from "icons-by-heynendo";
 
 function App() {
-  return <Menu size={24} color="#000" />;
+  return (
+    <div>
+      <Home size={24} color="currentColor" />
+      <Notification size={32} color="#FF5733" rotation={15} />
+      <ArrowLeft size={20} className="my-icon" onClick={handleClick} />
+    </div>
+  );
 }
 ```
 
-## 📝 Commands
+### Props
 
-### Build Commands
-- `npm run build:all` - Build SVG, JSX, and React files
-- `npm run build:svg` - Only optimize SVGs
-- `npm run build:jsx` - Only create JSX files
-- `npm run build:react` - Only create React components
+All icon components accept these props:
 
-### Metadata
-- `npm run metadata` - Auto-generate metadata from SVG files
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | number | 24 | Width and height in pixels |
+| `color` | string | "currentColor" | Fill color (inherits text color by default) |
+| `rotation` | number | 0 | Rotation in degrees |
+| `...props` | any | - | Any additional SVG props (className, onClick, etc.) |
 
-### Package Commands
-- `npm run package:setup` - Install package dependencies
-- `npm run package:build` - Build the npm package
-- `npm run package:link` - Link package for local testing
-
-## ➕ Adding New Icons
-
-1. Add SVG file to `icons/` folder
-2. Run `npm run metadata` (optional - auto-generates basic metadata)
-3. Edit `metadata/icons-metadata.json` to add better tags
-4. Run `npm run build:all`
-5. Run `npm run package:build`
-6. Commit everything
-
-## 🏷️ Icon Metadata
-
-Edit `metadata/icons-metadata.json`:
-
-```json
-{
-  "name": "icon-name",
-  "fileName": "icon-name.svg",
-  "category": "interface",
-  "tags": ["search", "alternative", "names"],
-  "description": "Icon description"
-}
 ```
 
-Tags enable users to find icons by alternative names (e.g., "burger" finds "menu").
+Each icon includes searchable keywords for easy discovery.
 
-## 🎨 Icon Props
+## Customization Examples
 
-All React components accept:
+### Using with Tailwind CSS
 
 ```jsx
-<Menu
-  size={24}              // number | string
-  color="currentColor"   // any CSS color
-  rotation={0}           // degrees
-  className=""           // CSS classes
-  style={{}}            // inline styles
-/>
+<Home className="w-6 h-6 text-blue-500 hover:text-blue-700" />
 ```
 
-## 📦 Publishing to NPM
+### Dynamic Colors
 
-When ready to publish:
-
-```bash
-# Login to npm (first time only)
-npm login
-
-# Publish
-cd packages/react
-npm publish
+```jsx
+const iconColor = darkMode ? "#ffffff" : "#000000";
+<Notification size={28} color={iconColor} />
 ```
 
-## 🔧 Troubleshooting
 
-**"Module not found" errors:**
-- Make sure you ran `npm run build:all` first
-- Then run `npm run package:build`
+### Rotating Icons
 
-**Package updates not showing:**
-- Unlink: `npm unlink icons-by-heynendo` (in frontend)
-- Rebuild: `npm run package:build` (in root)
-- Relink: `npm run package:link` (in root)
-- Link again: `npm link icons-by-heynendo` (in frontend)
+```jsx
+<ArrowLeft rotation={90} />  {/* Points down */}
+<ArrowLeft rotation={180} /> {/* Points right */}
+<ArrowLeft rotation={270} /> {/* Points up */}
+```
 
-## 📄 License
+## License
 
 MIT © Heynendo
+
+## Links
+
+- [NPM Package](https://www.npmjs.com/package/icons-by-heynendo)
+- [GitHub Repository](#) <!-- Add your repo URL -->
+- [Report Issues](#) <!-- Add your issues URL -->
+
+---

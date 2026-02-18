@@ -1,3 +1,6 @@
+.docs{
+    overflow-y: auto;
+}
 .docs > h1{
     display: flex;
     height: 150px;
@@ -29,6 +32,12 @@
     font-weight: 500;
     color: var(--coloraccent);
 }
+.docs > .body{
+    overflow-y: hidden;
+}
+.docs > .body > span{
+    overflow-y: hidden;
+}
 .docs > .body .content h2{
     margin-left: 5px;
 }
@@ -48,9 +57,9 @@
     justify-content: center;
     background-color: var(--background3);
     width: 100vw;
-    height: calc(100vh - 290px);
     padding: 0 2.5vw;
-    overflow-y: auto;
+    /*height: calc(100vh - 290px);
+    overflow-y: auto;*/
 }
 .docs > .body > span{
     display: flex;

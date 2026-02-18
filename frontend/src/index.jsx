@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter , Routes, Route, useLocation } from "react-router-dom"
 import { AnimatePresence } from "framer-motion"
+import { AlertProvider } from './functions/AlertProvider'
 
 import './styles/index.css'
 import './styles/scrollbar.css'
@@ -29,8 +30,10 @@ function AppRoutes(){
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      <AppRoutes />
-    </BrowserRouter>
+    <AlertProvider>
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
+    </AlertProvider>
   </StrictMode>,
 )

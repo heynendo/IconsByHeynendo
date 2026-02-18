@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 function PageDividerLeft({ children, style = {} }) {
     return (
@@ -29,7 +30,6 @@ export default function PageDivider({
     const [isDragging, setIsDragging] = useState(false)
     const containerRef = useRef(null)
 
-    // Only show divider if both sides are visible
     const showDivider = showLeft && showRight
 
     useEffect(() => {
@@ -39,6 +39,7 @@ export default function PageDivider({
             const container = containerRef.current
             const containerRect = container.getBoundingClientRect()
             const containerWidth = containerRect.width
+
             const newLeftWidthPx = e.clientX - containerRect.left
 
             const minLeftPercent = (minWidthLeft / containerWidth) * 100
@@ -65,7 +66,6 @@ export default function PageDivider({
     }, [isDragging, minWidthLeft, minWidthRight])
 
     const styleLeft = {
-        width: showDivider ? `${leftWidth}%` : '100%',
         minWidth: showDivider ? `${minWidthLeft}px` : undefined,
         display: showLeft ? 'block' : 'none'
     }
@@ -73,10 +73,8 @@ export default function PageDivider({
     const styleRight = {
         width: showDivider ? `${100 - leftWidth}%` : '100%',
         minWidth: showDivider ? `${minWidthRight}px` : undefined,
-        display: showRight ? 'flex' : 'none'
     }
 
-    // Extract Left and Right children
     const leftChild = children?.find(child => child?.type === PageDividerLeft)
     const rightChild = children?.find(child => child?.type === PageDividerRight)
 
@@ -87,27 +85,60 @@ export default function PageDivider({
             style={{ 
                 userSelect: isDragging ? 'none' : 'auto',
                 cursor: isDragging ? 'col-resize' : 'auto',
-                display: 'flex'
+                display: 'flex',
+                overflow: 'hidden',
+                position: 'relative'
             }}
         >
             {leftChild && (
-                <div className="page-divider-left" style={styleLeft}>
+                <motion.div 
+                    className="page-divider-left" 
+                    style={styleLeft}
+                    animate={{ 
+                        width: showRight ? `${leftWidth}%` : '100%' 
+                    }}
+                    transition={ 
+                        isDragging 
+                            ? { duration: 0 } 
+                            : { type: 'spring', stiffness: 300, damping: 30 }
+                    }
+                >
                     {leftChild.props.children}
-                </div>
+                </motion.div>
             )}
             
-            {rightChild && (
-                <div className="page-divider-right" style={styleRight}>
-                    {showDivider && (
-                        <div 
-                            className='page-divider-drag'
-                            onMouseDown={() => setIsDragging(true)}
-                            style={{ cursor: 'col-resize' }}
-                        />
-                    )}
-                    {rightChild.props.children}
-                </div>
-            )}
+            <AnimatePresence>
+                {rightChild && showRight && (
+                    <motion.div 
+                        className="page-divider-right" 
+                        style={{
+                            ...styleRight,
+                            position: 'absolute',
+                            right: 0,
+                            top: 0,
+                            height: '100%',
+                            display: 'flex'
+                        }}
+                        initial={{ x: '100%' }}
+                        animate={{ x: 0 }}
+                        exit={{ x: '100%' }}
+                        transition={{ 
+                            type: 'spring', 
+                            stiffness: 300, 
+                            damping: 30 
+                        }}
+                    >
+                        {showDivider && (
+                            <div 
+                                className='page-divider-drag'
+                                onMouseDown={() => setIsDragging(true)}
+                                style={{ cursor: 'col-resize' }}
+                            />
+                        )}
+                        {rightChild.props.children}
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     )
 }

@@ -4,6 +4,7 @@
 .icons > .page-divider-left{
     padding-top: 75px;
     padding-left: 2.5vw;
+    overflow-y: hidden;
 }
 .icons > .page-divider-left > .search-bar{
     margin-left: 20px;

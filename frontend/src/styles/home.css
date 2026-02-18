@@ -93,6 +93,7 @@
 .home > .right > .bottom{
     margin: 15px 0;
     margin-left: 10px;
+    overflow-y: hidden;
 }
 .home > .right > .bottom > p{
     display: flex;

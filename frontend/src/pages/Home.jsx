@@ -2,20 +2,28 @@ import { Link } from 'react-router-dom'
 import '../styles/home.css'
 import {motion} from "framer-motion"
 import FloatingIcons from '../components/FloatingIcons'
+import { TailedArrow2 } from "icons-by-heynendo"
+import iconData from '../../../data/icon-data.json'
 
 function Home(){
+
+    const iconNumber = Math.floor(iconData.length / 10) * 10
+
     return(
         <div className="home page-layout">
             <div className="left">
                 <span className='banner'>svg icons made easier</span>
                 <span className='title'>
-                    <h1 className='accent'>100+ Icons </h1>
+                    <h1 className='accent'>{iconNumber}+ Icons </h1>
                     <h1>With Endless Customization Waiting For You.</h1>
                 </span>
                 <div className='links'>
                     <Link to='/icons' className='large-button icons'>
                         <h2>View Icons</h2>
-                        <div className='circle' />
+                        <TailedArrow2 
+                            size={50}
+                            color='rgb(62, 72, 102)'
+                        />
                     </Link>
                     <Link to='/docs' className='large-button docs'>
                         <h2>Review Documentation</h2>

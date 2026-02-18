@@ -3,6 +3,7 @@ import '../styles/badge.css'
 export default function Badge({
     children,
     selected=false,
+    onClick,
     color1='rgb(227, 227, 227)',
     color2='rgba(227, 227, 227, 0.1)',
     color3='rgb(62, 72, 102)'
@@ -17,7 +18,7 @@ export default function Badge({
     }
 
     return(
-        <div className="badge" style={badgeStyle}>
+        <div className="badge" style={badgeStyle} onClick={onClick}>
             {children}
         </div>
     )

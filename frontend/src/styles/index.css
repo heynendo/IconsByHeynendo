@@ -9,6 +9,7 @@
 * {
   box-sizing: border-box;
   overflow: hidden;
+  overflow-y: auto;
 }
 html, body {
   margin: 0;

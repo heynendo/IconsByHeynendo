@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react'
 import '../styles/search-bar.css'
+import { Search1 } from "icons-by-heynendo"
 
 export default function SearchBar({ searchValue, setSearchValue }){
     const [isFocused, setIsFocused] = useState(false)
@@ -9,7 +10,9 @@ export default function SearchBar({ searchValue, setSearchValue }){
         <div className={`search-bar ${isFocused ? 'focused' : ''}`}
             onClick={() => inputRef.current?.focus()}
         >
-            <div className="icon"/>
+            <Search1 
+                size={20}
+            />
             <input 
                 ref={inputRef}
                 placeholder="search"

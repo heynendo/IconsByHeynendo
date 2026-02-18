@@ -1,0 +1,13 @@
+export default function MedicalBadge2({
+  size = 24,
+  color = "currentColor",
+  rotation = 0,
+  ...props
+}) {
+  return (
+    <svg width={size} height={size} fill={color} style={{ transform: `rotate(${rotation}deg)` }} {...props} viewBox="0 0 900 900" xmlns="http://www.w3.org/2000/svg">
+<path d="M450 0C698.528 0 900 201.472 900 450C900 698.528 698.528 900 450 900C201.472 900 0 698.528 0 450C0 201.472 201.472 0 450 0ZM405 395H225V495H405V675H505V495H675V395H505V225H405V395Z"/>
+</svg>
+
+  );
+}

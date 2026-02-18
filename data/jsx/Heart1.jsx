@@ -1,0 +1,13 @@
+export default function Heart1({
+  size = 24,
+  color = "currentColor",
+  rotation = 0,
+  ...props
+}) {
+  return (
+    <svg width={size} height={size} fill={color} style={{ transform: `rotate(${rotation}deg)` }} {...props} viewBox="0 0 1000 914" xmlns="http://www.w3.org/2000/svg">
+<path d="M501.652 85.4565C615.656 -28.4854 800.493 -28.4856 914.497 85.4565C1028.5 199.399 1028.5 384.136 914.497 498.078L498.348 914L85.5026 501.379C-28.5009 387.437 -28.5008 202.7 85.5026 88.7583C199.507 -25.1839 384.344 -25.1839 498.348 88.7583L501.652 85.4565Z"/>
+</svg>
+
+  );
+}

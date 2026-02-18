@@ -1,6 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import {AnimatePresence, motion} from 'framer-motion'
 import '../styles/input-styling.css'
+import { Arrow2 } from 'icons-by-heynendo'
 
 export default function InputWithDropdown({
   options = ['option1', 'option2', 'option3'],
@@ -52,7 +53,10 @@ export default function InputWithDropdown({
           onChange={handleInputChange}
         />
         <button className='toggle-dropdown' onClick={toggleDropdown}>
-          {isDropdownOpen ? '▲' : '▼'}
+          <Arrow2
+            size={12.5} 
+            rotation={isDropdownOpen ? '180' : '0'}
+          />
         </button>
       </div>
       <AnimatePresence>
