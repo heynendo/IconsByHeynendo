@@ -3,7 +3,7 @@ import '../styles/icons.css'
 import SearchBar from "../components/SearchBar"
 import PageDivider from '../components/PageDivider'
 import * as IconsHeynendo from 'icons-by-heynendo'
-import iconData from '../../../data/icon-data.json' 
+import iconData from "icons-by-heynendo" 
 import IconInfo from '../components/IconInfo'
 import { motion, AnimatePresence } from 'framer-motion'
 

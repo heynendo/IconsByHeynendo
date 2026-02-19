@@ -3,7 +3,7 @@ import '../styles/home.css'
 import {motion} from "framer-motion"
 import FloatingIcons from '../components/FloatingIcons'
 import { TailedArrow2 } from "icons-by-heynendo"
-import iconData from '../../../data/icon-data.json'
+import iconData from "icons-by-heynendo"
 
 function Home(){
 

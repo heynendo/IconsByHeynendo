@@ -4,16 +4,24 @@
   "description": "React-first icon library with SVG and JSX output",
   "main": "./data/jsx/index.js",
   "module": "./data/jsx/index.js",
+  "type": "module",
+  "files": [
+    "data/jsx",
+    "data/icon-data.json"
+  ],
   "exports": {
     ".": "./data/jsx/index.js",
-    "./*": "./dist/*.js"
+    "./icon-data": "./data/icon-data.json"
   },
-  "type": "module",
   "scripts": {
     "clean": "node scripts/cleanData.js",
     "build": "npm run clean && node scripts/build.js"
   },
-  "keywords": ["icons", "react", "svg"],
+  "sideEffects": false,
+  "keywords": ["icons", "react", "svg", "icon-library"],
   "author": "Heynendo",
-  "license": "MIT"
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=17"
+  }
 }
