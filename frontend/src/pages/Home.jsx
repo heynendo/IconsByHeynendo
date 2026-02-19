@@ -3,7 +3,8 @@ import '../styles/home.css'
 import {motion} from "framer-motion"
 import FloatingIcons from '../components/FloatingIcons'
 import { TailedArrow2 } from "icons-by-heynendo"
-import iconData from "icons-by-heynendo"
+import iconData from 'icons-by-heynendo/icon-data'
+import { Fragment } from 'react'
 
 function Home(){
 

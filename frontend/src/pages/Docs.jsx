@@ -107,7 +107,7 @@ export default function Docs(){
                 }}
             >
                 {`
-    import { Home, Notification, ArrowLeft } from "icons-by-heynendo";
+    import { Home, Notification, ArrowLeft } from "icons-by-heynendo"
 
     function App() {
         return (
@@ -119,6 +119,42 @@ export default function Docs(){
         )
     }
     `}
+            </SyntaxHighlighter>
+
+            <p>This project also includes a JSON with more data on each icon. Below shows how to import icon-data, including searchable keywords, alternate naming, and all file options.</p>
+
+            <SyntaxHighlighter 
+                lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}}
+                wrapLines={true} 
+                language={'jsx'}
+                style={vscDarkPlus}
+                customStyle={{
+                    margin: '25px 0 50px 25px',
+                    minHeight: '50px',
+                    borderRadius: '25px',
+                    border: 'solid 2px rgb(227, 227, 227)'
+                }}
+            >
+            {`
+    import iconData from 'icons-by-heynendo/icon-data'
+
+    function App() {
+        const numIcons = iconData.length
+        const iconNames = iconData.map(icon => {
+
+            const keywords = icon.keywords.map(word => <Fragment key={word}>{word} </Fragment> )
+
+            return(<p>{icon.name} (keywords: {keywords})</p>)
+        })
+
+        return(
+            <div>
+                <p>there are {numIcons} icons in this project, the names are below:</p>
+                {iconNames}
+            </div>
+        )
+    }
+            `} 
             </SyntaxHighlighter>
             
             <h4>Available Props</h4>

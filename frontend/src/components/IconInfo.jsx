@@ -6,7 +6,7 @@ import InputWithColorPicker from './InputWithColorPicker'
 import { useState, useEffect } from 'react'
 import '../styles/icon-info.css'
 import {AnimatePresence, motion} from "framer-motion"
-import iconData from "icons-by-heynendo"
+import iconData from 'icons-by-heynendo/icon-data'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { useAlert } from '../functions/AlertProvider'
