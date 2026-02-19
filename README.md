@@ -47,17 +47,7 @@ All icon components accept these props:
 | `rotation` | number | 0 | Rotation in degrees |
 | `...props` | any | - | Any additional SVG props (className, onClick, etc.) |
 
-```
 
-Each icon includes searchable keywords for easy discovery.
-
-## Customization Examples
-
-### Using with Tailwind CSS
-
-```jsx
-<Home className="w-6 h-6 text-blue-500 hover:text-blue-700" />
-```
 
 ### Dynamic Colors
 
@@ -74,15 +64,3 @@ const iconColor = darkMode ? "#ffffff" : "#000000";
 <ArrowLeft rotation={180} /> {/* Points right */}
 <ArrowLeft rotation={270} /> {/* Points up */}
 ```
-
-## License
-
-MIT © Heynendo
-
-## Links
-
-- [NPM Package](https://www.npmjs.com/package/icons-by-heynendo)
-- [GitHub Repository](#) <!-- Add your repo URL -->
-- [Report Issues](#) <!-- Add your issues URL -->
-
----
